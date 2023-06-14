@@ -1,66 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Quando baixar o projeto, o que fazer? 
+**1. Instalar as dependências do projeto**  
+`composer install`  
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**2. Criar as tabelas do banco de dados do projeto**  
+`php artisan migrate` 
 
-## About Laravel
+----
+## Diretorios mais usados do projeto
+**Controller**
+`App/Http/Controllers`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Model**
+`App/Http/Models`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**View**
+`resources/views/nome_arquivo.blade.php`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Rotas**
+`routes/web.php`
 
-## Learning Laravel
+**Arquivos de migração(geram as tabelas do banco de dados)**
+`database/migrations`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+----
+## Banco de dados
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Criar arquivo para gerar tabela no banco de dados**  
+`php artisan make:migration create_nome_tabela`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Gerar as tabelas no banco de dados**  
+`php artisan migrate`
 
-## Laravel Sponsors
+**Salvar .SQL do banco de dados**  
+`database/sql/db_aula.sql`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Criar um arquivo para inserir registros no banco de dados**  
+`php artisan make:seeder CategoriaSeeder`
 
-### Premium Partners
+**Inserir registros no banco de dados a partir de um arquivo**  
+`php artisan db::seed CategoriaSeeder`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+----
+## Comandos básicos do Laravel  
+**Listar todos os comandos do Laravel**  
+`php artisan list`
 
-## Contributing
+**Criar um arquivo Model**  
+`php artisan make:model Usuario`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Criar um arquivo Model e um arquivo de migração ao mesmo tempo**  
+`php artisan make:model Usuario -m`
 
-## Code of Conduct
+**Criar um arquivo Controller**  
+`php artisan make:controller Usuario`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Habilitar o envio de arquivo para o Storage**  
+`php artisan storage:link`
 
-## Security Vulnerabilities
+**Iniciar o sistema**  
+`php artisan serve`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Acessar o sistema**  
+`http://localhost:8000/`
 
-## License
+## Comandos básicos Git
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Clonar o projeto**  
+`git clone URL_PROJETO`
+
+**Adicionar todos arquivos para serem versionados**  
+`git add .`
+
+**Commitar o arquivo para ser versionado**  
+`git commit -m "Sua mensagem"`
+
+**Enviar as alterações para o repositorio remoto do Git**  
+`git push`
+
+**Atualizar arquivos do projeto local de acordo com o repositorio do Git remoto**  
+`git pull`
+
+### Links Úteis
+- [Documentação oficial do Laravel](https://laravel.com/docs).
+- [Curso completo Laravel versão 10 em português](https://academy.especializati.com.br/curso/laravel-10-gratuito).
