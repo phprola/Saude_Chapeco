@@ -16,15 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/CapsDrogas', function () {
-    return view('CapsDrogas');
-});
-Route::get('/CapsAdulto', function () {
-    return view('CapsAdulto');
-});
-Route::get('/CapsInf', function () {
-    return view('CapsInf');
-});
-Route::get('/outros', function () {
-    return view('outros');
-});
+
+Route::get('/dashboard', function () {
+    return view('base.dashboard');
+})
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+    Route::get('/CapsDrogas', function () {
+        return view('CapsDrogas');
+    });
+    Route::get('/CapsAdulto', function () {
+        return view('CapsAdulto');
+    });
+    Route::get('/CapsInf', function () {
+        return view('CapsInf');
+    });
+    Route::get('/outros', function () {
+        return view('outros');
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::resource('usuario', UsuarioController::class);
+        Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
+            'usuario.search'
+        );
+    });
+?>
