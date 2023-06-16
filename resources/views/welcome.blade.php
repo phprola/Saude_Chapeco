@@ -19,9 +19,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="./">Início</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about">Caps AD</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products">Caps </a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store">Cardápio</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="CapsDrogas">Caps Alcool e Drogas</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="CapsAdulto">Caps Adulto </a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="CapsInf">Caps Infantil</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="outros"></a>Outros</li>
                     </ul>
                 </div>
             </div>
