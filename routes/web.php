@@ -28,4 +28,3 @@ Route::get('/CapsInf', function () {
 Route::get('/outros', function () {
     return view('outros');
 });
-?>
