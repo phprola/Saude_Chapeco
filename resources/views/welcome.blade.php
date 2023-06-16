@@ -68,20 +68,29 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>O QUE É O CAPS?</h2>
-                        <p class="lead">        <section id="oque">
-                            <h1></h1>
-                            Os Centros de Atenção Psicossocial (CAPS) são unidades de saúde pública de caráter comunitário nos municípios, e contam com profissionais habilitados para atender diversas demandas, tais quais a reabilitação neuropsicológica para dependentes químicos, acolhimento com psicoterapia e psiquiatria, terapia ocupacional, medicação assistida e atendimento humanizado ao núcleo familiar e domiciliar para os pacientes, sempre buscando reinserção e integração social.
-                            O Sistema Único de Saúde (SUS) é um dos maiores e mais complexos sistemas de saúde pública do mundo, abrangendo desde o simples atendimento para avaliação da pressão arterial, até o transplante de órgãos, garantindo acesso integral, universal e gratuito para toda a população do país visando a prevenção e a promoção da saúde” (Governo Federal, 1999)</h5>
+                        Os Centros de Atenção Psicossocial (CAPS) são unidades de saúde pública de caráter comunitário nos municípios, e contam com profissionais habilitados para atender diversas demandas, tais quais a reabilitação neuropsicológica para dependentes químicos, acolhimento com psicoterapia e psiquiatria, terapia ocupacional, medicação assistida e atendimento humanizado ao núcleo familiar e domiciliar para os pacientes, sempre buscando reinserção e integração social.
+                        O Sistema Único de Saúde (SUS) é um dos maiores e mais complexos sistemas de saúde pública do mundo, abrangendo desde o simples atendimento para avaliação da pressão arterial, até o transplante de órgãos, garantindo acesso integral, universal e gratuito para toda a população do país visando a prevenção e a promoção da saúde” (Governo Federal, 1999)</h5>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+                        <div class="col-lg-8">
+                            <h2>NOSSO SISTEMA</h2>
                         </div>
-
-
+                            <p class="lead">
+                            Temos como objetivo informar a população local sobre onde, como e porquê buscar auxílio psicológico quando necessário. Somos responsáveis por:</h5>
                         </p>
                         <ul>
-                            <li>Clickable nav links that smooth scroll to page sections</li>
-                            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                            <li>Conectar os serviços de saúde do município de Chapecó com a população local;</li>
+                            <li>Orientar e tirar dúvidas a respeito do tema de saúde mental;</li>
+                            <li>Organizar informações importantes para facilitar o alcance dos cidadãos aos serviços de saúde;</li>
+                            <li>Conscientizar os municípedes da importância da saúde mental da família;</li>
+                            <li>Previnir transtornos, doenças e vícios dentro do ambiente familiar.</li>
+
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -91,11 +100,22 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>Services we offer</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                        <h2>SERVIÇOS </h2>
+                        <p class="lead"> Nas suas diferentes modalidades os CAPS oferecem atendimento clínico em regime de atenção diária à população, com equipe multiprofissional que reúne médicos, assistentes sociais, psicólogos, psiquiatras, enfermeiros, terapêutas ocupacionais, entre outros agentes da rede pública.</h2>
+                        </p>
+                        <br>
+                   
+
+                        <ul>
+                            <li>UNIDADE DE SAÚDE MENTAL PARA CRIANÇAS E ADOLESCENTES</li>
+                            <li>UNIDADE DE SAÚDE MENTAL PARA DEPENDENTES DE ÁLCOOL E OUTRAS DROGAS</li>
+                            <li>UNIDADE DE SAÚDE MENTAL PARA ADULTOS</li>
+                            <li>SERVIÇOS DE ATENTIMENTO DE SAÚDE COMUNITÁRIO PELAS UNIVERSIDADES COMUNITÁRIAS</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
         </section>
         <!-- Contact section-->
         <section id="contact">
