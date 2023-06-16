@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(54, 52, 127);
+   
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: 2%;
+        justify-content: center;
+    
+}
+nav{
+    left: 0;
+    height: auto;
+    background-color: rgb(236, 226, 226);
+    margin-top: 0px;
+    border-radius: 10px;
+}
+
+nav ul{
+    margin: 0;
+    list-style: none;
+    width:auto;
+    height:auto;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a{
+   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 40px;
+    text-transform: none;
+}
+
+a.active, a:hover{
+    background: rgb(54, 52, 127);
+    transition: 0s;
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    font-family: 'Arial Narrow';
+}
+h2, h3{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Arial Narrow';
+}
+
+footer{
+    height: 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+    text-align: center;
+    background-color:white;
+    color: black;
+   
+}
+p{
+    color: black;
+    font-size: 25px;
+    font-family: 'Arial Narrow';
+}
+
+li,a{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Arial Narrow';
+}
+h4{
+    color: white;
+    font-family: 'Arial Narrow';
+}
+#sala{
+    border-radius: 150px;
+}
+td{
+    color: white;
+    font-size: 30px;
+    font-family: 'Arial Narrow'
+}
+
+i{
+    color: black;
+    size: 15px;
+}
