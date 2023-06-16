@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
     Route::get('/CapsDrogas', function () {
         return view('CapsDrogas');
     });
@@ -41,4 +42,6 @@ Route::get('/dashboard', function () {
             'usuario.search'
         );
     });
-?>
+
+require __DIR__ . '/auth.php';
+
