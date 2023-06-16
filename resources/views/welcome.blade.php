@@ -12,6 +12,24 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">CAFETERIA VIP CHAPECÓ</span>
+                <span class="site-heading-lower">O VERDADEIRO CAFÉ</span>
+            </h1>
+            @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-lg text-gray-400 dark:text-gray-400">Painel</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-lg text-gray-400 dark:text-gray-400">Entrar</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-lg text-gray-400 dark:text-gray-400">Cadastrar</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container px-4">
                 <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
