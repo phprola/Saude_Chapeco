@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,20 +23,25 @@ Route::get('/dashboard', function () {
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::resource('usuario', UsuarioController::class);
-    Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
-        'usuario.search'
-    );
-    Route::get('/profile', [ProfileController::class, 'edit'])->name(
-        'profile.edit'
-    );
-    Route::patch('/profile', [ProfileController::class, 'update'])->name(
-        'profile.update'
-    );
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name(
-        'profile.destroy'
-    );
-});
+    Route::get('/CapsDrogas', function () {
+        return view('CapsDrogas');
+    });
+    Route::get('/CapsAdulto', function () {
+        return view('CapsAdulto');
+    });
+    Route::get('/CapsInf', function () {
+        return view('CapsInf');
+    });
+    Route::get('/outros', function () {
+        return view('outros');
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::resource('usuario', UsuarioController::class);
+        Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
+            'usuario.search'
+        );
+    });
 
 require __DIR__ . '/auth.php';
+
