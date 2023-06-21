@@ -40,6 +40,16 @@
             </div>
         @endif
         </nav>
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-6 text-center">
+                <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1>
+                <br>
+
+                <div>
+                    <img src="img/6.png" width="100%" height="20%">
+                    <h6>Descrição de imagem: SAÚDE DA CRIANÇA, FIQUE ATENTO AOS SINAIS. O banner possui fundo azul escuro e letras claras. Bem grande e ao centro está escrito: SAÚDE DA CRIANÇA. e logo abaixo uma baixa azul claro, escrito “FIQUE ATENTO AOS SINAIS”.</h6>
+                </div>
+                <br>
 
         <div>
             <h1>O que é o CAPS infantil?</h1>
@@ -47,11 +57,7 @@
 
         </div>
         <br>
-        <div>
-            <img src="img/6.png" width="100%" height="20%">
-            <h4>Descrição de imagem: SAÚDE DA CRIANÇA, FIQUE ATENTO AOS SINAIS. O banner possui fundo azul escuro e letras claras. Bem grande e ao centro está escrito: SAÚDE DA CRIANÇA. e logo abaixo uma baixa azul claro, escrito “FIQUE ATENTO AOS SINAIS”.</h4>
-        </div>
-        <br>
+
         <div>
             <h1>Saúde mental na infância e adolescência</h1>
             <br>
