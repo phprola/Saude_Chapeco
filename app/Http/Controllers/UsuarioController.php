@@ -27,20 +27,8 @@ class UsuarioController extends Controller
     function store(Request $request)
     {
         $request->validate(
-            [
-                'nome' => 'required | max: 120',
-                'telefone' => 'required | max: 20',
-                'email' => ' nullable | email | max: 100',
-                'categoria_id' => ' nullable',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
-            ],
-            [
-                'nome.required' => 'O nome é obrigatório',
-                'nome.max' => 'Só é permitido 120 caracteres',
-                'telefone.required' => 'O telefone é obrigatório',
-                'telefone.max' => 'Só é permitido 20 caracteres',
-                'email.max' => 'Só é permitido 100 caracteres',
-            ]
+            Usuario::rules(),
+            Usuario::messages()
         );
 
         //adiciono os dados do formulário ao vetor
@@ -56,6 +44,7 @@ class UsuarioController extends Controller
         //verifica se o campo imagem foi passado uma imagem
         if ($imagem) {
             $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
+
             $diretorio = 'imagem/';
             //salva a imagem em uma pasta
             $imagem->storeAs($diretorio, $nome_arquivo, 'public');
@@ -100,22 +89,10 @@ class UsuarioController extends Controller
     {
         //dd( $request->nome);
         $request->validate(
-            [
-                'nome' => 'required | max: 120',
-                'telefone' => 'required | max: 20',
-                'email' => ' nullable | email | max: 100',
-                'categoria_id' => ' nullable',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
-            ],
-            [
-                'nome.required' => 'O nome é obrigatório',
-                'nome.max' => 'Só é permitido 120 caracteres',
-                'telefone.required' => 'O telefone é obrigatório',
-                'telefone.max' => 'Só é permitido 20 caracteres',
-                'email.max' => 'Só é permitido 100 caracteres',
-            ]
+            Usuario::rules(),
+            Usuario::messages()
         );
-
+        
         //adiciono os dados do formulário ao vetor
         $dados =  [
             'nome' => $request->nome,
@@ -145,22 +122,24 @@ class UsuarioController extends Controller
         return \redirect('usuario')->with('success', 'Atualizado com sucesso!');
     }
 
-    function destroy($id){
+    function destroy($id)
+    {
         $usuario = Usuario::findOrFail($id);
 
-        // verifica se existe o arquivo vinculado ao registro e depois remove
-       if ($usuario->imagem){
+        //verifica se existe o arquivo vinculado ao registro e depois remove
+        if (Storage::disk('public')->exists($usuario->imagem)) {
             Storage::disk('public')->delete($usuario->imagem);
         }
         $usuario->delete();
+
         return \redirect('usuario')->with('success', 'Removido com sucesso!');
     }
 
     function search(Request $request)
     {
-        if ($request->campo) {
+        if ($request->campo == 'nome') {
             $usuarios = Usuario::where(
-                $request->campo,
+                'nome',
                 'like',
                 '%' . $request->valor . '%'
             )->get();

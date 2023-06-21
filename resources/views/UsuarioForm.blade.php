@@ -9,7 +9,7 @@
         }
     @endphp
 @section('tituloPagina', 'Formulário Usuário')
-<h1>Formulário para Usuário</h1>
+<h1>Formulário Usuário</h1>
 
 <div class="col">
     <div class="row">
@@ -28,7 +28,7 @@
             </div>
             <div class="col-3">
                 <label class="form-label">Telefone</label><br>
-                <input type="tel" class="form-control" name="telefone"
+                <input type="text" class="form-control" name="telefone"
                     value="@if (!empty(old('telefone'))) {{ old('telefone') }} @elseif(!empty($usuario->telefone)) {{ $usuario->telefone }} @else {{ '' }} @endif" /><br>
             </div>
             <div class="col-3">
@@ -56,7 +56,7 @@
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar
             </button>
-            <a href="{{ route('usuario.index') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>
+            <a href='{{ route('usuario.index') }}' class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i>
                 Voltar</a> <br><br>
         </form>
     </div>

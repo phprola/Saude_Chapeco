@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">Café|Vip</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Sis ABC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -14,13 +14,18 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/usuario') }}">Usuário</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/funcionario') }}">Funcionários</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/estoque') }}">Estoque</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/cardapio') }}">Cardápio</a></li>
+                            <li><a class="dropdown-item" href="#">Item 01</a></li>
+                            <li><a class="dropdown-item" href="#">Item 02</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/leitura') }}">Sensor</a>
+                        <a class="nav-link" href="#">Item 01</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Item 01</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Item 03</a>
                     </li>
                 </ul>
             </div>
