@@ -12,26 +12,9 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <header>
-            <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">CAFETERIA VIP CHAPECÓ</span>
-                <span class="site-heading-lower">O VERDADEIRO CAFÉ</span>
-            </h1>
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-lg text-gray-400 dark:text-gray-400">Painel</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-lg text-gray-400 dark:text-gray-400">Entrar</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-lg text-gray-400 dark:text-gray-400">Cadastrar</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container px-4">
+
                 <a class="navbar-brand" href="#page-top">Saúde Mental - Chapecó (SC)</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -44,10 +27,22 @@
                     </ul>
                 </div>
             </div>
+            @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="text-lg text-gray-900 dark:text-gray-400">Painel</a>
+                @else
+                    <a href="{{ route('login') }}" class="text-lg text-gray-900 dark:text-gray-400">Entrar</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 text-lg text-gray-400 dark:text-gray-400">Cadastrar</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
         </nav>
         <!-- Header-->
         <header class="bg-primary bg-gradient text-white">
-            <div class="container px-4 text-center">
+            <div class="container px-6 text-center">
                 <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1>
                 <br>
                 <!-- ======= WELCOME SECTION ======= -->
@@ -69,7 +64,7 @@
                     <div class="col-lg-8">
                         <h2>O QUE É O CAPS?</h2>
                         Os Centros de Atenção Psicossocial (CAPS) são unidades de saúde pública de caráter comunitário nos municípios, e contam com profissionais habilitados para atender diversas demandas, tais quais a reabilitação neuropsicológica para dependentes químicos, acolhimento com psicoterapia e psiquiatria, terapia ocupacional, medicação assistida e atendimento humanizado ao núcleo familiar e domiciliar para os pacientes, sempre buscando reinserção e integração social.
-                        O Sistema Único de Saúde (SUS) é um dos maiores e mais complexos sistemas de saúde pública do mundo, abrangendo desde o simples atendimento para avaliação da pressão arterial, até o transplante de órgãos, garantindo acesso integral, universal e gratuito para toda a população do país visando a prevenção e a promoção da saúde” (Governo Federal, 1999)</h5>
+
 <br>
 <br>
 <br>
@@ -88,23 +83,21 @@
                             <li>Organizar informações importantes para facilitar o alcance dos cidadãos aos serviços de saúde;</li>
                             <li>Conscientizar os municípedes da importância da saúde mental da família;</li>
                             <li>Previnir transtornos, doenças e vícios dentro do ambiente familiar.</li>
-
                         </ul>
-
                     </div>
                 </div>
             </div>
-        </section>
+        
         <!-- Services section-->
         <section class="bg-light" id="services">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>SERVIÇOS </h2>
-                        <p class="lead"> Nas suas diferentes modalidades os CAPS oferecem atendimento clínico em regime de atenção diária à população, com equipe multiprofissional que reúne médicos, assistentes sociais, psicólogos, psiquiatras, enfermeiros, terapêutas ocupacionais, entre outros agentes da rede pública.</h2>
+                        <p class="lead"> Nas suas diferentes modalidades os CAPS oferecem atendimento clínico em regime de atenção diária à população, com equipe multiprofissional que reúne médicos, assistentes sociais, psicólogos, psiquiatras, enfermeiros, terapêutas ocupacionais, entre outros agentes da rede pública. Aqui você encontra:</h2>
                         </p>
                         <br>
-                   
+
 
                         <ul>
                             <li>UNIDADE DE SAÚDE MENTAL PARA CRIANÇAS E ADOLESCENTES</li>
@@ -114,27 +107,14 @@
                         </ul>
                     </div>
                 </div>
+                <br>
+                <br>
             </div>
-
-        </section>
-        <!-- Contact section-->
-        <section id="contact">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>Contact us</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
+            <br>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+            <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
