@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Atendimento;
 
 class AtendimentoController extends Controller
 {
     function index()
     {
-        $atendimento = atendimento::all();
+        $atendimentos = atendimento::all();
         // dd($atendimentos);
 
         return view('AtendimentoList')->with(['atendimentos' => $atendimentos]);

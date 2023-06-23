@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\atendimentoController;
 use App\Http\Controllers\FarmaciaController;
 use App\Http\Controllers\AtendimentoController;
 use App\Http\Controllers\PDFController;
