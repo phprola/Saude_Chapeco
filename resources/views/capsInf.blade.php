@@ -41,19 +41,17 @@
         </nav>
         <header class="bg-primary bg-gradient text-white">
             <div class="container px-6 text-center">
-                <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1>
-                <br>
-
+                <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1><br>
                 <div>
                     <img src="img/6.png" width="100%" height="20%">
                     <h6>Descrição de imagem: SAÚDE DA CRIANÇA, FIQUE ATENTO AOS SINAIS. O banner possui fundo azul escuro e letras claras. Bem grande e ao centro está escrito: SAÚDE DA CRIANÇA. e logo abaixo uma baixa azul claro, escrito “FIQUE ATENTO AOS SINAIS”.</h6>
-                </div>
-                <br>
-
+                </div><br>
+            </div>
+        </header>
+        <section>
         <div>
             <h1>O que é o CAPS infantil?</h1>
             <h2>O CAPS infantil ou CAPSi recebe crianças acima de dois anos, pré-adolescentes e adolescentes com transtornos mentais graves e persistentes, incluindo o uso de drogas e psicoativos. Difere-se do atendimento CAPS Adulto por possuir acompanhamento de neuropsicólogos especializados em infância, pediatras e psicopedagogos na equipe profissional. Está em funcionamento desde 2005 em Chapecó.</h2>
-
         </div>
         <br>
 
@@ -130,11 +128,14 @@
             <li><a href="caps2.html">CAPS 2</a></li>
             <li><a href="caps.html">CAPS AD</a></li>
             <li><a href="outros.html">Outros Atendimentos</a></li>
-
         </div>
-        <footer>
-            <p>Autores: Giordano Parisotto e Marcos A. Ambrozio</p>
-
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
         </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{asset('js/scripts.js')}}"></script>
     </body>
 </html>

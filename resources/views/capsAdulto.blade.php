@@ -41,14 +41,28 @@
         </nav>
         <header class="bg-primary bg-gradient text-white">
             <div class="container px-6 text-center">
-                <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1>
-                <br>
-
+                <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1><br>
                 <img src="img/3.png" width="100%" height="20%">
                 <h6>Descrição de imagem: CAPS, RECONSTRUINDO UMA HISTÓRIA JUNTOS. O banner possui o fundo de uma parede branca, e bem ao centro está escrito CAPS 2, em letras grandes azuis. Logo abaixo está escrita a frase: "reconstruindo uma história juntos". Nos dois lados da imagem há três peças de lego sendo encaixadas, feito um jogo de quebra-cabeças. No canto inferior da imagem estão 7 Girassóis amarelos e iguais.</h6>
             </div><br>
-            <section id="about">
-                <div class="container px-4">
-                    <div class="row gx-4 justify-content-center">
-                        <div class="col-lg-8">
-                            <h2>O QUE É O CAPS?</h2>
+        </header>
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>O QUE É O CAPS?</h2>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark botton-0">
+            <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{asset('js/scripts.js')}}"></script>
+    </body>
+</html>
