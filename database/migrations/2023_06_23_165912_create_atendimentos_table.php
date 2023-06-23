@@ -13,19 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-       Schema::disableForeignKeyConstraints();
-
-        Schema::create('leitura', function (Blueprint $table) {
+        Schema::create('atendimentos', function (Blueprint $table) {
             $table->id();
-            $table->date('data_leitura');
-            $table->string('hora_leitura',20);
-            $table->foreignId('sensor_id')->nullable()->constrained('sensor')->default(null);
-            $table->foreignId('mac_id')->nullable()->constrained('mac')->default(null);
+            $table->date('data');
+            $table->string('hora',20);
+            $table->foreignId('paciente_id')->nullable()->constrained('paciente')->default(null);
+            $table->foreignId('funcionario_id')->nullable()->constrained('funcionario')->default(null);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
-
     }
 
     /**
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('atendimentos');
     }
 };

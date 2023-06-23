@@ -48,6 +48,10 @@ Route::get('/dashboard', function () {
         Route::post('farmacia/search', [FarmaciaController::class, 'search'])->name(
             'farmacia.search'
         );
+        Route::resource('atendimento', AtendimentoController::class);
+        Route::post('atendimento/search', [AtendimentoController::class, 'search'])->name(
+            'atendimento.search'
+        );
     });
 
 require __DIR__ . '/auth.php';
