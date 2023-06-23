@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FarmaciaController;
+use App\Http\Controllers\AtendimentoController;
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 

@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Atendimento;
 use Illuminate\Http\Request;
 
-class atendimentoController extends Controller
+class AtendimentoController extends Controller
 {
     function index()
     {
-        $atendimento = atendimento::all();
+        $atendimento = Atendimento::all();
         // dd($atendimentos);
 
-        return view('atendimentoList')->with(['atendimentos' => $atendimentos]);
+        return view('AtendimentoList')->with(['atendimentos' => $atendimentos]);
     }
 
 
@@ -20,7 +20,7 @@ class atendimentoController extends Controller
         $funcionario = Funcionario::orderBy('nome')->get();
         $paciente = Paciente::orderBy('nome')->get();
         //dd($categorias);
-        return view('atendimentoForm')->with(['funcionario' => $funcionario,'paciente' => $paciente]);
+        return view('AtendimentoForm')->with(['funcionario' => $funcionario,'paciente' => $paciente]);
     }
 
     function store(Request $request)
