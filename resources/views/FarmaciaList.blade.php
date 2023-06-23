@@ -22,6 +22,8 @@
             </button>
             <a class="btn btn-success" href="{{ action('App\Http\Controllers\FarmaciaController@create') }}"><i
                     class="fa-solid fa-plus"></i> Cadastrar</a>
+                <a class="btn btn-info" href="{{ action('App\Http\Controllers\PDFController@gerarFarmaciaPDF') }}"><i
+                    class="fa-solid fa-print"></i> Baixar PDF</a>
         </div>
     </div>
 </form>

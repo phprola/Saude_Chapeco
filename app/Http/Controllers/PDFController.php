@@ -3,44 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cardapio;
-use App\Models\Funcionario;
-use App\Models\Tipo;
-use App\Models\Setor;
+use App\Models\Farmacia;
 use PDF;
 
 class PDFController extends Controller
 {
-    public function generateCardapioPDF()
+    public function gerarFarmaciaPDF()
     {
-        $cardapios = Cardapio::orderBy('tipo_id')->get();
-        $tipos = Tipo::orderBy('id')->get();
-//dd($cardapios);
+        $farmacias = Farmacia::orderBy('medicamento')->get();
+//dd($farmacias);
         $data = [
-            'title' => 'Impressão do Cardápio',
+            'title' => 'Lista de Medicamentos',
             'date' => date('d/m/Y'),
-            'cardapios' => $cardapios,
-            'tipos' => $tipos,
+            'farmacias' => $farmacias,
         ];
-        $pdf = PDF::loadView('CardapioPDF', $data);
+        $pdf = PDF::loadView('FarmaciaPDF', $data);
 
-        return $pdf->download('CardápioCaféVip.pdf');
-    }
-
-
-    public function generateFuncionarioPDF()
-    {
-        $funcionarios = Funcionario::orderBy('nome')->get();
-        $setores = Setor::orderBy('nome')->get();
-//dd($funcionarios);
-        $data = [
-            'title' => 'Lista de Funcionários',
-            'date' => date('d/m/Y'),
-            'funcionarios' => $funcionarios,
-            'setores' => $setores,
-        ];
-        $pdf = PDF::loadView('FuncionarioPDF', $data);
-
-        return $pdf->download('FuncionáriosCaféVip.pdf');
+        return $pdf->download('FarmáciaCAPS.pdf');
     }
 }

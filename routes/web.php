@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FarmaciaController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,7 @@ Route::get('/dashboard', function () {
     Route::get('/outros', function () {
         return view('outros');
     });
+    Route::get('gerarFarmaciaPDF', [PDFController::class, 'gerarFarmaciaPDF']);
 
     Route::middleware('auth')->group(function () {
         Route::resource('usuario', UsuarioController::class);

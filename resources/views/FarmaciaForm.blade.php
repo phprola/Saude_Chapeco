@@ -9,7 +9,7 @@
         }
     @endphp
 @section('tituloPagina', 'Formulário Usuário')
-<h1>Formulário para Usuário</h1>
+<h1>Formulário para Cadastro de Medicamentos da Farmácia</h1>
 
 <div class="col">
     <div class="row">

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('codigo', false, true);
             $table->string('medicamento', 35);
             $table->integer('quantidade', false, true);
+            $table->float('valor', 10);
             $table->timestamps();
         });
     }
