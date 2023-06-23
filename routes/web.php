@@ -3,6 +3,7 @@
 use App\Http\Controllers\FarmaciaController;
 use App\Http\Controllers\AtendimentoController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
