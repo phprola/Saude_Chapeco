@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Atendimento;
 use Illuminate\Http\Request;
 
 class atendimentoController extends Controller
 {
     function index()
     {
-        $atendimento = atendimento::all();
+        $atendimentos = Atendimento::all();
         // dd($atendimentos);
 
         return view('atendimentoList')->with(['atendimentos' => $atendimentos]);

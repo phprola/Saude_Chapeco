@@ -9,7 +9,7 @@ class Atendimento extends Model
 {
     use HasFactory;
 
-    protected $table = "atendimento";
+    protected $table = "Atendimento";
 
     protected $fillable = [
         'data', 'hora', 'funcionario_id', 'paciente_id'

@@ -29,6 +29,7 @@ class FarmaciaController extends Controller
                 'codigo' => 'required | max: 10',
                 'medicamento' => 'required | max: 35',
                 'quantidade' => ' required | max: 10',
+                'valor' => ' required | max: 10',
             ],
             [
                 'codigo.required' => 'O codigo é obrigatório',
@@ -37,6 +38,8 @@ class FarmaciaController extends Controller
                 'medicamento.max' => 'Só é permitido 35 caracteres',
                 'quantidade.required' => 'O quantidade é obrigatório',
                 'quantidade.max' => 'Só é permitido 10 caracteres',
+                'valor.required' => 'O valor é obrigatório',
+                'valor.max' => 'Só é permitido 10 caracteres',
             ]
         );
 
@@ -45,6 +48,7 @@ class FarmaciaController extends Controller
             'codigo' => $request->codigo,
             'medicamento' => $request->medicamento,
             'quantidade' => $request->quantidade,
+            'valor' => $request->valor,
         ];
 
         //dd( $request->nome);
@@ -84,6 +88,7 @@ class FarmaciaController extends Controller
                 'codigo' => 'required | max: 10',
                 'medicamento' => 'required | max: 35',
                 'quantidade' => ' required | max: 10',
+                'valor' => ' required | max: 10',
             ],
             [
                 'codigo.required' => 'O codigo é obrigatório',
@@ -92,6 +97,8 @@ class FarmaciaController extends Controller
                 'medicamento.max' => 'Só é permitido 35 caracteres',
                 'quantidade.required' => 'O quantidade é obrigatório',
                 'quantidade.max' => 'Só é permitido 10 caracteres',
+                'valor.required' => 'O valor é obrigatório',
+                'valor.max' => 'Só é permitido 10 caracteres',
             ]
         );
 
@@ -100,6 +107,7 @@ class FarmaciaController extends Controller
             'codigo' => $request->codigo,
             'medicamento' => $request->medicamento,
             'quantidade' => $request->quantidade,
+            'valor' => $request->valor,
         ];
 
         //metodo para atualizar passando o vetor com os dados do form e o id

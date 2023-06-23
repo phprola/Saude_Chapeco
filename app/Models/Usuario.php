@@ -11,7 +11,7 @@ class Usuario extends Model
     protected $table = "usuario";
 
     protected $fillable = [
-        'nome', 'telefone', 'email','categoria_id', 'imagem'
+        'nome', 'cpf', 'telefone', 'email', 'imagem'
     ];
 
     public function categoria(){

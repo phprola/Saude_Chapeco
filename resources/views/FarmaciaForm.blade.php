@@ -36,6 +36,11 @@
                 <input type="number" class="form-control" name="quantidade"
                     value=@if (!empty(old('quantidade'))) {{ old('quantidade') }} @elseif(!empty($farmacia->quantidade)) {{ $farmacia->quantidade }} @else {{ '' }} @endif /><br>
             </div>
+            <div class="col-3">
+                <label class="form-label">Valor(R$)</label><br>
+                <input type="text" class="form-control" name="valor"
+                    value="@if (!empty(old('valor'))) {{ old('valor') }} @elseif(!empty($farmacia->valor)) {{ $farmacia->valor }} @else {{ '' }} @endif" /><br>
+            </div>
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar
             </button>

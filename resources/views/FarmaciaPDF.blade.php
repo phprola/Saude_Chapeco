@@ -15,6 +15,7 @@
             <th>Código</th>
             <th>Nome do Medicamento</th>
             <th>Quantidade</th>
+            <th>Valor(R$)</th>
         </tr>
         @foreach($farmacias as $item)
             <tr>
@@ -22,6 +23,7 @@
                 <td>{{$item->codigo}}</td>
                 <td>{{$item->medicamento}}</td>
                 <td>{{$item->quantidade}}</td>
+                <td>{{$item->valor}}</td>
             </tr>
         @endforeach
     </table>

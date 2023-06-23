@@ -11,6 +11,6 @@ class Farmacia extends Model
     protected $table = "farmacia";
 
     protected $fillable =[
-        'codigo', 'medicamento', 'quantidade'
+        'codigo', 'medicamento', 'quantidade', 'valor'
     ];
 }

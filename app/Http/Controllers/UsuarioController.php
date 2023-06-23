@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
-use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
 
 class UsuarioController extends Controller
@@ -19,9 +18,8 @@ class UsuarioController extends Controller
 
     function create()
     {
-        $categorias = Categoria::orderBy('nome')->get();
         //dd($categorias);
-        return view('UsuarioForm')->with(['categorias' => $categorias]);
+        return view('UsuarioForm');
     }
 
     function store(Request $request)
@@ -29,14 +27,16 @@ class UsuarioController extends Controller
         $request->validate(
             [
                 'nome' => 'required | max: 120',
+                'cpf' => 'required | max: 14',
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
-                'categoria_id' => ' nullable',
                 'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
                 'nome.max' => 'Só é permitido 120 caracteres',
+                'cpf.required' => 'O CPF é obrigatório',
+                'cpf.max' => 'Só é permitido 14 caracteres',
                 'telefone.required' => 'O telefone é obrigatório',
                 'telefone.max' => 'Só é permitido 20 caracteres',
                 'email.max' => 'Só é permitido 100 caracteres',
@@ -46,9 +46,9 @@ class UsuarioController extends Controller
         //adiciono os dados do formulário ao vetor
         $dados = [
             'nome' => $request->nome,
+            'cpf' => $request->cpf,
             'telefone' => $request->telefone,
             'email' => $request->email,
-            'categoria_id' => $request->categoria_id,
         ];
 
         $imagem = $request->file('imagem');
@@ -75,11 +75,9 @@ class UsuarioController extends Controller
         //select * from usuario where id = $id;
         $usuario = Usuario::findOrFail($id);
         //dd($usuario);
-        $categorias = Categoria::orderBy('nome')->get();
 
         return view('UsuarioForm')->with([
             'usuario' => $usuario,
-            'categorias' => $categorias,
         ]);
     }
 
@@ -88,11 +86,9 @@ class UsuarioController extends Controller
         //select * from usuario where id = $id;
         $usuario = Usuario::findOrFail($id);
         //dd($usuario);
-        $categorias = Categoria::orderBy('nome')->get();
 
         return view('UsuarioForm')->with([
             'usuario' => $usuario,
-            'categorias' => $categorias,
         ]);
     }
 
@@ -102,14 +98,16 @@ class UsuarioController extends Controller
         $request->validate(
             [
                 'nome' => 'required | max: 120',
+                'cpf' => 'required | max: 14',
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
-                'categoria_id' => ' nullable',
                 'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
                 'nome.max' => 'Só é permitido 120 caracteres',
+                'cpf.required' => 'O CPF é obrigatório',
+                'cpf.max' => 'Só é permitido 14 caracteres',
                 'telefone.required' => 'O telefone é obrigatório',
                 'telefone.max' => 'Só é permitido 20 caracteres',
                 'email.max' => 'Só é permitido 100 caracteres',
@@ -117,11 +115,11 @@ class UsuarioController extends Controller
         );
 
         //adiciono os dados do formulário ao vetor
-        $dados =  [
+        $dados = [
             'nome' => $request->nome,
+            'cpf' => $request->cpf,
             'telefone' => $request->telefone,
             'email' => $request->email,
-            'categoria_id' => $request->categoria_id,
         ];
 
         $imagem = $request->file('imagem');

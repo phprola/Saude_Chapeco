@@ -9,7 +9,9 @@
         <div class="col-2">
             <select name="campo" class="form-select">
                 <option value="nome">Nome</option>
+                <option value="cpf">CPF</option>
                 <option value="telefone">Telefone</option>
+                <option value="email">Email</option>
             </select>
         </div>
         <div class="col-4">
@@ -29,9 +31,10 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
-            <th scope="col">Categoria</th>
+            <th scope="col">Imagem</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -44,9 +47,9 @@
             <tr>
                 <td scope='row'>{{ $item->id }}</td>
                 <td>{{ $item->nome }}</td>
+                <td>{{ $item->cpf }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->categoria->nome }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
                 <td><a href="{{ action('App\Http\Controllers\UsuarioController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>

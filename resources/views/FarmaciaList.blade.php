@@ -11,6 +11,7 @@
                 <option value="codigo">Código</option>
                 <option value="medicamento">Nome do Medicamento</option>
                 <option value="quantidade">Quantidade</option>
+                <option value="valor">Valor(R$)</option>
             </select>
         </div>
         <div class="col-4">
@@ -34,6 +35,7 @@
             <th scope="col">Código</th>
             <th scope="col">Medicamento</th>
             <th scope="col">Quantidade</th>
+            <th scope="col">Valor(R$)</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -45,6 +47,7 @@
                 <td>{{ $item->codigo }}</td>
                 <td>{{ $item->medicamento }}</td>
                 <td>{{ $item->quantidade }}</td>
+                <td>{{ $item->valor }}</td>
                 <td><a href="{{ action('App\Http\Controllers\FarmaciaController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>

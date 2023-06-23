@@ -27,6 +27,11 @@
                     value="@if (!empty(old('nome'))) {{ old('nome') }} @elseif(!empty($usuario->nome)) {{ $usuario->nome }} @else {{ '' }} @endif" /><br>
             </div>
             <div class="col-3">
+                <label class="form-label">CPF</label><br>
+                <input type="tel" class="form-control" name="cpf"
+                    value="@if (!empty(old('cpf'))) {{ old('cpf') }} @elseif(!empty($usuario->cpf)) {{ $usuario->cpf }} @else {{ '' }} @endif" /><br>
+            </div>
+            <div class="col-3">
                 <label class="form-label">Telefone</label><br>
                 <input type="tel" class="form-control" name="telefone"
                     value="@if (!empty(old('telefone'))) {{ old('telefone') }} @elseif(!empty($usuario->telefone)) {{ $usuario->telefone }} @else {{ '' }} @endif" /><br>
@@ -35,14 +40,6 @@
                 <label class="form-label">E-mail</label><br>
                 <input type="email" class="form-control" name="email"
                     value="@if (!empty(old('email'))) {{ old('email') }} @elseif(!empty($usuario->email)) {{ $usuario->email }} @else {{ '' }} @endif" /><br>
-            </div>
-            <div class="col-3">
-                <label class="form-label">Categoria</label><br>
-                <select name="categoria_id" class="form-select">
-                    @foreach ($categorias as $item)
-                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
-                    @endforeach
-                </select>
             </div>
             @php
                 $nome_imagem = !empty($usuario->imagem) ? $usuario->imagem : 'sem_imagem.jpg';
