@@ -14,13 +14,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/usuario') }}">Usuário</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/funcionario') }}">Funcionários</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/estoque') }}">Estoque</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/cardapio') }}">Cardápio</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/farmacia') }}">Farmácia</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/') }}"></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/') }}"></a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/leitura') }}">Sensor</a>
+                        <a class="nav-link" href="{{ url('/usuario') }}">Usuários</a>
                     </li>
                 </ul>
             </div>

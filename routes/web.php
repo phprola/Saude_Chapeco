@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FarmaciaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,10 @@ Route::get('/dashboard', function () {
         Route::resource('usuario', UsuarioController::class);
         Route::post('usuario/search', [UsuarioController::class, 'search'])->name(
             'usuario.search'
+        );
+        Route::resource('farmacia', FarmaciaController::class);
+        Route::post('farmacia/search', [FarmaciaController::class, 'search'])->name(
+            'farmacia.search'
         );
     });
 

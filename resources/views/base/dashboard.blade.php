@@ -6,9 +6,9 @@
         <div class="col-sm-12 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body" style="text-align: center;">
-                    <h5 class="card-title">Sensor de Temperatura da Água</h5>
-                    <p class="card-text">O nosso sensor de temperatura da água garante que o café seja feito na temperatura ideal,<br> entre  C° e  C°, para que seja mantido o sabor característico do café.</p>
-                    <a href="{{ url('/leitura') }}" class="btn btn-primary">Verificar Sensor</a>
+                    <h5 class="card-title">Consultar Farmácia</h5>
+                    <p class="card-text">Verifique os medicamentos que estão disponíveis.</p>
+                    <a href="{{ url('/farmacia') }}" class="btn btn-primary">Entrar</a>
                 </div>
             </div>
         </div>
