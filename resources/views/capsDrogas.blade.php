@@ -73,45 +73,19 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="container px-6 text-center">
-                    <h1 class="fw-bolder">Seguro, Completo, Gratuito e de Qualidade</h1><br>
-                    <img src="img/12.png" width="100%" height="20%">
-                    <h6>Descrição de Imagem: Está escrito ATENDIMENTO HUMANIZADO E DIGNO ao centro e há um coração rosa claro abaixo. O fundo do banner possui uma textura branca, similar a uma porcelana rachada, e ao lado do texto está um desenho em preto e branco de uma gaiola, e logo ao lado um passarinho, também em formato de sombra, preto e branco. O passarinho está a voar, e mais adiante há um bando de passarinhos no mesmo estilo de desenho.</h6>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</div>
+</section>
 
-        <!-- Services section-->
-        <section class="bg-light" id="services">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>Perguntas Frequentes </h2><br>
-                        <p class="lead">Quanto tempo dura o tratamento?</p><br>
-                        <p>
-                            O tratamento varia muito de pessoa a pessoa, conforme os sintomas e o diagnóstico. O melhor é consultar um médico, que fornecerá mais informações de acordo com sua situação.
-                        </p><br>
-                        <p class="lead">O paciente é obrigado a seguir no tratamento até o final?</p><br>
-                        <p>
-                            A equipe de profissionais do SUS incentiva a concluir e seguir com os tratamentos psicológicos e psiquiátricos até que o paciente receba alta médica. Nem sempre será fácil, pois cada organismo é diferente e possui uma adaptação diferente a cada tratamento. ATENÇÃO! Se estiver em tratamento e pensa em desistir, o melhor é conversar com seu médico ou outro profissional da área de saúde que possa orientá-lo melhor para evitar crises futuras. <br>
-                        </p><br>
-                        <p class="lead">O paciente é obrigado a seguir no tratamento até o final?</p><br>
-                        <p>
-                            A equipe de profissionais do SUS incentiva a concluir e seguir com os tratamentos psicológicos e psiquiátricos até que o paciente receba alta médica. Nem sempre será fácil, pois cada organismo é diferente e possui uma adaptação diferente a cada tratamento. ATENÇÃO! Se estiver em tratamento e pensa em desistir, o melhor é conversar com seu médico ou outro profissional da área de saúde que possa orientá-lo melhor para evitar crises futuras. <br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{asset('js/scripts.js')}}"></script>
-    </body>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark botton-0">
+<div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{{asset('js/scripts.js')}}"></script>
+</body>
 </html>
-

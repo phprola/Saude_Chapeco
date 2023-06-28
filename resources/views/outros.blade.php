@@ -45,15 +45,71 @@
             <div class="container px-6 text-center">
                 <h1 class="fw-bolder"> Bem-vindo! Parabéns por estar buscando ajuda.</h1>
                 <br>
-                <!-- ======= WELCOME SECTION ======= -->
 
 
-                  <div>
-                      <img src="img/1.png" width="100%" height="20%">
-                     <h6>Descrição de imagem: CUIDAR DA SAÚDE É CUIDAR DA FAMÍLIA. O banner possui fundo azul escuro e as letras são brancas. Ao canto esquerdo superior, está escrito: CUIDAR DA SAÚDE É CUIDAR DA FAMÍLIA. E entre a frase há uma grande família, formada por 10 pessoas em formato de sombra em preto. Nela, há uma criança segurando a mão de seu pai e sua mãe, mais dois irmãos menores, uma pessoa sentada em uma cadeira de rodas e mais um casal que segura a mão de duas crianças.  Ao lado direito da imagem, está escrito, também em branco: "DISQUE 136 - SUS". O Disque saúde para emergências do Sistema Único de Saúde.</h6>
-                  </div>
+                <!-- =======CONTEUDO SECTION ======= -->
+                <div class="container px-4">
+
+                    <div>
+                        <img src="img/10.png" width="100%" height="20%">
+                        <h6>Descrição de Imagem: Depressão não é frescura. Banner de fundo azul escuro e texto escrito em letras grandes, brancas, garrafais. Está em destaque sob uma faixa rosa a frase “Depressão é uma doença” e possui tratamento.  EM letras menores, escrito abaixo: “Não abandone o seu bem estar. Visite a unidade Básica de Saúde mais próxima”.  Ao lado da frase principal há o símbolo médico de “frequência cardíaca” e um coração rosa ao lado.
+                            </h6>
+                        </header>
+                    </div>
+
+                <br>
 
 
-                  <!-- ======= WELCOME SECTION END  ======= -->
+                    <div class="container px-4">
+                    <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                            <h2>Serviços da Unochapecó</h2>
+                            <p> Para ter acesso aos atendimentos da Unochapecó e contato com profissionais e estagiários da área de psicologia, precisa realizar cadastro contatando via e-mail, whatsapp ou então presencialmente na diretoria do curso. Os custos variam conforme o serviço disponível e a renda familiar do paciente.</p>
+                        </div>
+                    </div><br>
+                    <div class="row  gx-4 justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="col-lg-8">
+                            <h4>Contato: (49) 98437-1402</h4>
+                            </div></div></div> </div> <br> <br>
 
-        </header>
+
+                     <div class="container px-4">
+                     <div class="row gx-4 justify-content-center">
+                     <div class="col-lg-8">
+
+                                <h2>Serviços da UNOESC </h2>
+                                <p> A Universidade do Oeste de Santa Catarina (UNOESC) possui um programa de estágio supervisionado que prevê o acolhimento psicológico e serviços como: atendimento infantil, adolescente e adulto, atendimento de família, atendimento de casal, acolhimento em grupo, orientação profissional, plantão psicológico e avaliação psicológica. Ao contatar a equipe de serviços de Atendimento Psicológico da universidade, recebemos a informação de que é necessário realizar o primeiro contato com os serviços através do plantão psicológico.</p>
+                                </div>
+                                </div><br>
+
+                                <div class="row  gx-4 justify-content-center">
+                                <div class="col-lg-8">
+                                <h4>Contato: sap.cco@unoesc.edu.br ou (49) 3319-2683
+                                </h4>
+                                </div> </div></div>
+
+            <!-- Services section-->
+            <section class="bg-light" id="services">
+                <div class="container px-4">
+                    <div class="row gx-4 justify-content-center">
+                        <div class="col-lg-8">
+                            <h2>Como funciona?</h2>
+                            <p class="lead">    O paciente  será recebido no plantão, passa por avaliação psicológica e será encaminhado à fila de espera ou ao atendimento necessário conforme gravidade da enfermidade. O acompanhamento é impreterivelmente realizado de forma semanal por tempo indefinido.</p><br>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark botton-0">
+        <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{asset('js/scripts.js')}}"></script>
+    </body>
+</html>
+

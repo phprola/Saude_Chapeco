@@ -96,6 +96,32 @@
                     </div>
                 </div>
             </div>
+
+
+
+        <!-- Services section-->
+        <section class="bg-light" id="services">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Perguntas Frequentes </h2><br>
+                        <p class="lead">Quanto tempo dura o tratamento?</p><br>
+                        <p>
+                            O tratamento varia muito de pessoa a pessoa, conforme os sintomas e o diagnóstico. O melhor é consultar um médico, que fornecerá mais informações de acordo com sua situação.
+                        </p><br>
+                        <p class="lead">O paciente é obrigado a seguir no tratamento até o final?</p><br>
+                        <p>
+                            A equipe de profissionais do SUS incentiva a concluir e seguir com os tratamentos psicológicos e psiquiátricos até que o paciente receba alta médica. Nem sempre será fácil, pois cada organismo é diferente e possui uma adaptação diferente a cada tratamento. ATENÇÃO! Se estiver em tratamento e pensa em desistir, o melhor é conversar com seu médico ou outro profissional da área de saúde que possa orientá-lo melhor para evitar crises futuras. <br>
+                        </p><br>
+                        <p class="lead">O paciente é obrigado a seguir no tratamento até o final?</p><br>
+                        <p>
+                            A equipe de profissionais do SUS incentiva a concluir e seguir com os tratamentos psicológicos e psiquiátricos até que o paciente receba alta médica. Nem sempre será fácil, pois cada organismo é diferente e possui uma adaptação diferente a cada tratamento. ATENÇÃO! Se estiver em tratamento e pensa em desistir, o melhor é conversar com seu médico ou outro profissional da área de saúde que possa orientá-lo melhor para evitar crises futuras. <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark botton-0">

@@ -50,19 +50,60 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>O QUE É O CAPS?</h2>
+                        <h2>Quando buscar o CAPS Adulto?</h2>
+                        <br>
+                        <h5>O Centro de Acolhimento Psicossocial (CAPS) Unidade II no município de Chapecó (SC) desde 2002 e é  responsável pelo atendimento de pessoas com transtornos mentais graves e persistentes, como transtornos psicóticos (esquizofrenia, trastorno delirante persistente, transtorno psicótico breve, transtorno esquizoafetivo e psicose), transtornos afetivos graves (transtorno bipolar tipo 1 e 2, depressão recorrente grave, transtornos de personalidade (antissocial, histriônica, emocionalmente instável, personalidade dependente) e transtornos impulsivos-compulsivos(TOC e transtornos alimentares).</h5>
 
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark botton-0">
-            <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{asset('js/scripts.js')}}"></script>
-    </body>
+
+
+        <!-- Services section-->
+        <section class="bg-light" id="services">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Quem pode me atender? </h2>
+                        </p>
+                        <h5>Esta unidade conta com mais de 20 servidores públicos efetivados. Foram realizos mais de 7700 atendimentos entre os meses de Janeiro e Julho de 2022.</h5>
+            <br>
+            <ul>
+
+
+            <li>7 Auxiliares de Enfermagem</li>
+            <li>5 Psicólogos Clínicos</li>
+            <li>4 Médicos Psiquiatras</li>
+            <li>2 Médicos Clínicos</li>
+            <li>2 Enfermeiros</li>
+            <li>1 Assistente Social</li>
+            <li>Auxiliar em Saúde Bucal</li>
+            <li>1 Farmacêutico</li>
+
+        </div>
+                </div>
+            </div>
+        </section>
+
+<section>
+        <div class="container px-6 text-center">
+            <h1 class="fw-bolder">Seguro, Completo, Gratuito e de Qualidade</h1><br>
+            <img src="img/12.png" width="100%" height="20%">
+            <h6>Descrição de Imagem: Está escrito ATENDIMENTO HUMANIZADO E DIGNO ao centro e há um coração rosa claro abaixo. O fundo do banner possui uma textura branca, similar a uma porcelana rachada, e ao lado do texto está um desenho em preto e branco de uma gaiola, e logo ao lado um passarinho, também em formato de sombra, preto e branco. O passarinho está a voar, e mais adiante há um bando de passarinhos no mesmo estilo de desenho.</h6>
+        </div>
+    </div>
+</section>
+
+
+
+   <!-- Footer-->
+   <footer class="py-5 bg-dark botton-0">
+    <div class="container px-4"><p class="m-0 text-center text-white">Projeto IFSC &copy; Participação de Giordano Ritter Parisotto, Pedro Henrique Pedroso Prola, Vitor Luis de Souza, Marcos Alessandro Ambrozio</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{{asset('js/scripts.js')}}"></script>
+</body>
 </html>
