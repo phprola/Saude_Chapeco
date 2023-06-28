@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FarmaciaController;
 use App\Http\Controllers\AtendimentoController;
+use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\UsuarioController;
@@ -58,6 +59,10 @@ Route::get('/dashboard', function () {
         Route::resource('paciente', PacienteController::class);
         Route::post('paciente/search', [PacienteController::class, 'search'])->name(
             'paciente.search'
+        );
+        Route::resource('funcionario', FuncionarioController::class);
+        Route::post('funcionario/search', [FuncionarioController::class, 'search'])->name(
+            'funcionario.search'
         );
     });
 

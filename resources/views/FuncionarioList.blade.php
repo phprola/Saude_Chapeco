@@ -12,6 +12,7 @@
                 <option value="telefone">Telefone</option>
                 <option value="email">Email</option>
                 <option value="CRP">CRP</option>
+                <option value="caps">CAPS</option>
             </select>
         </div>
         <div class="col-4">

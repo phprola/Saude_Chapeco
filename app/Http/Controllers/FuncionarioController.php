@@ -29,6 +29,7 @@ class FuncionarioController extends Controller
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
                 'crp' => 'required | max: 11',
+                'caps' => 'required | max: 20',
                 'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
@@ -39,29 +40,33 @@ class FuncionarioController extends Controller
                 'email.max' => 'Só é permitido 100 caracteres',
                 'crp.required' => 'O crp é obrigatório',
                 'crp.max' => 'Só é permitido 11 caracteres',
+                'caps.required' => 'O nome do CAPS é obrigatório',
+                'caps.max' => 'Só é permitido 20 caracteres',
             ]
         );
 
-        $imagem = $request->file('imagem');
-        $nome_arquivo = '';
-        if ($imagem) {
-            $nome_arquivo =
-                date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
-
-            $diretorio = 'imagem/';
-            $imagem->storeAs($diretorio, $nome_arquivo, 'public');
-            $nome_arquivo = $diretorio . $nome_arquivo;
-        }
-
-        //dd( $request->nome);
-        Funcionario::create([
+        $dados = [
             'nome' => $request->nome,
             'telefone' => $request->telefone,
             'email' => $request->email,
-            'imagem' => $nome_arquivo,
             'crp' => $request->crp,
+            'caps' => $request->caps,
+        ];
 
-        ]);
+        $imgfun = $request->file('imgfun');
+        $nome_arquivo = '';
+        //verifica se o campo imgfun foi passado uma imgfun
+        if ($imgfun) {
+            $nome_arquivo = date('YmdHis') . '.' . $imgfun->getClientOriginalExtension();
+            $diretorio = 'imagem/';
+            //salva a imgfun em uma pasta
+            $imgfun->storeAs($diretorio, $nome_arquivo, 'public');
+            //adiciona ao vetor o diretorio do arquivo e o nome
+            $dados['imgfun'] = $diretorio . $nome_arquivo;
+        }
+
+        //dd( $request->nome);
+        Funcionario::create($dados);
 
         return \redirect()->action(
             'App\Http\Controllers\FuncionarioController@index'
@@ -98,8 +103,9 @@ class FuncionarioController extends Controller
                 'nome' => 'required | max: 120',
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
                 'crp' => 'required | max: 11',
+                'caps' => 'required | max: 20',
+                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
@@ -109,6 +115,8 @@ class FuncionarioController extends Controller
                 'email.max' => 'Só é permitido 100 caracteres',
                 'crp.required' => 'O crp é obrigatório',
                 'crp.max' => 'Só é permitido 11 caracteres',
+                'caps.required' => 'O nome do CAPS é obrigatório',
+                'caps.max' => 'Só é permitido 20 caracteres',
             ]
         );
 
@@ -117,18 +125,19 @@ class FuncionarioController extends Controller
             'telefone' => $request->telefone,
             'email' => $request->email,
             'crp' => $request->crp,
+            'caps' => $request->caps,
         ];
 
-        $imagem = $request->file('imagem');
-        //verifica se o campo imagem foi passado uma imagem
-        if ($imagem) {
-            $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
+        $imgfun = $request->file('imgfun');
+        //verifica se o campo imgfun foi passado uma imgfun
+        if ($imgfun) {
+            $nome_arquivo = date('YmdHis') . '.' . $imgfun->getClientOriginalExtension();
 
             $diretorio = 'imagem/';
-            //salva a imagem em uma pasta
-            $imagem->storeAs($diretorio, $nome_arquivo, 'public');
+            //salva a imgfun em uma pasta
+            $imgfun->storeAs($diretorio, $nome_arquivo, 'public');
             //adiciona ao vetor o diretorio do arquivo e o nome
-            $dados['imagem'] = $diretorio . $nome_arquivo;
+            $dados['imgfun'] = $diretorio . $nome_arquivo;
         }
 
         //metodo para atualizar passando o vetor com os dados do form e o id
