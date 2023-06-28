@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email',100);
             $table->string('imagem',150)->nullable();
             $table->timestamps();
+            
         });
     }
 
