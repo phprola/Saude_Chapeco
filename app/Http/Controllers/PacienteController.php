@@ -26,7 +26,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        return view('PacienteList');
+        return view('PacienteForm');
     }
 
     /**
@@ -139,7 +139,7 @@ class PacienteController extends Controller
 
         //dd( $request->nome);
         //passa o vetor com os dados do formulário como parametro para ser salvo
-        Paciente::createOrUpdate(
+        Paciente::UpdateOrCreate(
             ['id' => $request->id], $dados
         );
 
@@ -159,5 +159,20 @@ class PacienteController extends Controller
         // verifica se existe o arquivo vinculado ao registro e depois remove
         $paciente->delete();
         return \redirect('paciente')->with('success', 'Removido com sucesso!');
+    }
+    function search(Request $request)
+    {
+        if ($request->campo) {
+            $pacientes = Paciente::where(
+                $request->campo,
+                'like',
+                '%' . $request->valor . '%'
+            )->get();
+        } else {
+            $pacientes = Paciente::all();
+        }
+
+        //dd($pacientes);
+        return view('PacienteList')->with(['pacientes' => $pacientes]);
     }
 }
