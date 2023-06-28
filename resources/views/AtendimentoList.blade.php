@@ -10,8 +10,6 @@
             <select name="campo" class="form-select">
                 <option value="data">data da atendimento</option>
                 <option value="hora">hora da atendimento</option>
-                <option value="paciente_nome">Nome do Paciente</option>
-                <option value="paciente_email">Email do Paciente</option>
             </select>
         </div>
         <div class="col-4">
@@ -32,22 +30,19 @@
             <th scope="col">ID</th>
             <th scope="col">Data da atendimento</th>
             <th scope="col">Hora da atendimento</th>
-            <th scope="col">Nome do Paciente</th>
-            <th scope="col">Email do Paciente</th>
             <th scope="col">ID do Funcionario</th>
-            <th scope="col"></th>
+            <th scope="col">ID do Paciente</th>
             <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($Atendimento as $item)
+        @foreach ($atendimento as $item)
             <tr>
                 <td scope='row'>{{ $item->id }}</td>
                 <td>{{ $item->data }}</td>
                 <td>{{ $item->hora }}</td>
-                <td>{{ $item->paciente_nome }}</td>
-                <td>{{ $item->paciente_email }}</td>
                 <td>{{ $item->funcionario->nome }}</td>
+                <td>{{ $item->paciente->nome }}</td>
                 <td><a href="{{ action('App\Http\Controllers\AtendimentoController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>
