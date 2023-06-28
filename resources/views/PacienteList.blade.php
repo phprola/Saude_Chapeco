@@ -1,9 +1,9 @@
 @extends('base.app')
 
 @section('conteudo')
-@section('tituloPagina', 'Listagem de Usuários')
-<h1>Listagem de Funcionários</h1>
-<form action="{{ route('funcionario.search') }}" method="post">
+@section('tituloPagina', 'Lista de Pacientes')
+<h1>Lista de Pacientes</h1>
+<form action="{{ route('paciente.search') }}" method="post">
     @csrf
     <div class="row">
         <div class="col-2">
@@ -11,7 +11,7 @@
                 <option value="nome">Nome</option>
                 <option value="telefone">Telefone</option>
                 <option value="email">Email</option>
-                <option value="CRP">CRP</option>
+                <option value="UBS">UBS</option>
             </select>
         </div>
         <div class="col-4">
@@ -21,9 +21,8 @@
             <button class="btn btn-primary" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
-            <a class="btn btn-success" href="{{ action('App\Http\Controllers\FuncionarioController@create') }}"><i
-                class="fa-solid fa-plus"></i> Cadastrar</a>
-
+            <a class="btn btn-success" href="{{ action('App\Http\Controllers\PacienteController@create') }}"><i
+                    class="fa-solid fa-plus"></i> Cadastrar</a>
         </div>
     </div>
 </form>
@@ -34,26 +33,23 @@
             <th scope="col">Nome</th>
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
-            <th scope="col">CRP</th>
-            <th scope="col">Imagem</th>
+            <th scope="col">UBS</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($funcionarios as $item)
-            @php
-                $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
-            @endphp
+        @foreach ($pacientes as $item)
             <tr>
                 <td scope='row'>{{ $item->id }}</td>
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->crp }}</td>
-                <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
-                <td><a href="{{ action('App\Http\Controllers\FuncionarioController@edit', $item->id) }}"><i
+                <td>{{ $item->UBS }}</td>
+                <td><a href="{{ action('App\Http\Controllers\PacienteController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
                 <td>
-                    <form method="POST" action="{{ action('App\Http\Controllers\FuncionarioController@destroy', $item->id) }}">
+                    <form method="POST" action="{{ action('App\Http\Controllers\PacienteController@destroy', $item->id) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         @csrf
                         <button type="submit" onclick='return confirm("Deseja Excluir?")' style='all: unset; cursor:pointer;'><i

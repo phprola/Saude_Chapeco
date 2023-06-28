@@ -9,7 +9,6 @@
             $route = route('atendimento.store');
         }
         //$atendimento->data_atendimento = date('d/m/Y', strtotime($atendimento->data_atendimento));
-
     @endphp
 @section('tituloPagina', 'Formulário Atendimento')
 <h1>Formulário do Atendimento</h1>
@@ -27,7 +26,7 @@
             <div class="col-3">
                 <label class="form-label">Data da Atendimento </label><br>
                 <input type="date" class="form-control" name="data_atendimento"
-                    value=@if (!empty(old('data_atendimento'))) {{old('data_atendimento')}} @elseif(!empty($atendimento->data_atendimento)) {{date_format($data_formatada, 'Y-m-d')}} @else {{ '' }} @endif /><br>
+                    value=@if (!empty(old('data_atendimento'))) {{ old('data_atendimento') }} @elseif(!empty($atendimento->data_atendimento)) {{ date_format($data_formatada, 'Y-m-d') }} @else {{ '' }} @endif /><br>
             </div>
             <div class="col-3">
                 <label class="form-label">Hora da Atendimento</label><br>
@@ -35,12 +34,14 @@
                     value=@if (!empty(old('hora_atendimento'))) {{ old('hora_atendimento') }} @elseif(!empty($atendimento->hora_atendimento)) {{ $atendimento->hora_atendimento }} @else {{ '' }} @endif /><br>
             </div>
             <div class="col-3">
-                <label class="form-label">ID do Paciente</label><br>
-                <select name="paciente_id" class="form-select">
-                    @foreach ($paciente as $item)
-                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
-                    @endforeach
-                </select>
+                <label class="form-label">Nome do Paciente</label><br>
+                <input type="text" class="form-control" name="paciente_nome"
+                    value=@if (!empty(old('paciente_nome'))) {{ old('paciente_nome') }} @elseif(!empty($atendimento->paciente_nome)) {{ $atendimento->hora_atendimento }} @else {{ '' }} @endif /><br>
+            </div>
+            <div class="col-3">
+                <label class="form-label">Email do Paciente</label><br>
+                <input type="text" class="form-control" name="paciente_email"
+                    value=@if (!empty(old('paciente_email'))) {{ old('paciente_email') }} @elseif(!empty($atendimento->paciente_email)) {{ $atendimento->hora_atendimento }} @else {{ '' }} @endif /><br>
             </div>
             <div class="col-3">
                 <label class="form-label">ID do Funcionário</label><br>

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('nome',120);
             $table->string('telefone',20);
             $table->string('email',100);
-            $table->string('imgfun',150)->nullable();
+            $table->string('crp',11);
+            $table->string('imagem',150)->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Atendimento;
+use App\Models\Funcionario;
+use Illuminate\Support\Facades\Storage;
 
 class AtendimentoController extends Controller
 {
@@ -19,9 +21,8 @@ class AtendimentoController extends Controller
     function create()
     {
         $funcionario = Funcionario::orderBy('nome')->get();
-        $paciente = Paciente::orderBy('nome')->get();
         //dd($categorias);
-        return view('AtendimentoForm')->with(['funcionario' => $funcionario,'paciente' => $paciente]);
+        return view('AtendimentoForm')->with(['funcionario' => $funcionario]);
     }
 
     function store(Request $request)
@@ -30,12 +31,15 @@ class AtendimentoController extends Controller
             [
                 'data' => 'required',
                 'hora' => 'required',
-                'paciente_id' => 'required',
+                'paciente_email' => 'required',
+                'paciente_email' => 'required',
                 'funcionario_id' => 'required',
             ],
             [
                 'data.required' => 'A data da atendimento é obrigatório',
                 'hora.required' => 'A hora da atendimento é obrigatório',
+                'paciente_nome.required' => 'O nome do paciente é obrigatório',
+                'paciente_email.required' => 'O email do paciente é obrigatório',
             ]
         );
 
@@ -43,7 +47,8 @@ class AtendimentoController extends Controller
         $dados = [
             'data' => $request->data,
             'hora' => $request->hora,
-            'paciente_id' => $request->paciente_id,
+            'paciente_nome' => $request->paciente_nome,
+            'paciente_email' => $request->pciente_email,
             'funcionario_id' => $request->funcionario_id,
         ];
 
@@ -59,12 +64,10 @@ class AtendimentoController extends Controller
         //select * from atendimento where id = $id;
         $atendimento = Atendimento::findOrFail($id);
         //dd($atendimento);
-        $paciente = Paciente::orderBy('nome')->get();
         $funcionario = Funcionario::orderBy('nome')->get();
 
         return view('AtendimentoForm')->with([
             'atendimento' => $atendimento,
-            'paciente' => $paciente,
             'funcionario' => $funcionario,
         ]);
     }
@@ -74,12 +77,10 @@ class AtendimentoController extends Controller
         //select * from atendimento where id = $id;
         $atendimento = Atendimento::findOrFail($id);
         //dd($atendimento);
-        $paciente = Paciente::orderBy('nome')->get();
         $funcionario = Funcionario::orderBy('nome')->get();
 
         return view('atendimentoForm')->with([
             'atendimento' => $atendimento,
-            'sensor' => $sensor,
             'funcionario' => $funcionario,
         ]);
     }
@@ -91,7 +92,8 @@ class AtendimentoController extends Controller
             [
                 'data' => 'required',
                 'hora' => 'required',
-                'paciente_id' => 'required',
+                'paciente_email' => 'required',
+                'paciente_nome' => 'required',
                 'funcionario_id' => 'required',
             ],
             [
@@ -104,7 +106,8 @@ class AtendimentoController extends Controller
         $dados = [
             'data' => $request->data,
             'hora' => $request->hora,
-            'paciente_id' => $request->paciente_id,
+            'paciente_email' => $request->paciente_email,
+            'paciente_nome' => $request->paciente_nome,
             'funcionario_id' => $request->funcionario_id,
         ];
 

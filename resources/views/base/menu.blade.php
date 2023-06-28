@@ -15,7 +15,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/usuario') }}">Usuário</a></li>
                             <li><a class="dropdown-item" href="{{ url('/farmacia') }}">Farmácia</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/') }}"></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/funcionario') }}">Funcionário</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/paciente') }}">Paciente</a></li>
                             <li><a class="dropdown-item" href="{{ url('/atendimento') }}">Atendimento</a></li>
                         </ul>
                     </li>
