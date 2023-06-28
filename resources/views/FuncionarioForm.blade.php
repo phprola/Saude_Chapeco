@@ -37,21 +37,18 @@
                     value="@if (!empty(old('email'))) {{ old('email') }} @elseif(!empty($funcionario->email)) {{ $funcionario->email }} @else {{ '' }} @endif" /><br>
             </div>
             <div class="col-3">
-                <label class="form-label">Setor</label><br>
-                <select name="setor_id" class="form-select">
-                    @foreach ($setor as $item)
-                        <option value="{{ $item->id }}" >{{ $item->nome }}</option>
-                    @endforeach
-                </select>
+                <label class="form-label">CRP</label><br>
+                <input type="text" class="form-control" name="crp"
+                    value="@if (!empty(old('crp'))) {{ old('crp') }} @elseif(!empty($funcionario->crp)) {{ $funcionario->crp }} @else {{ '' }} @endif" /><br>
             </div>
             @php
-                $nome_imagem = !empty($funcionario->imgfun) ? $funcionario->imgfun : 'sem_imagem.jpg';
+                $nome_imagem = !empty($funcionario->imagem) ? $funcionario->imagem : 'sem_imagem.jpg';
             @endphp
             <div class="col-6">
                 <br>
                 <img class="img-thumbnail" src="/storage/{{ $nome_imagem }}" width="300px" />
                 <br><br>
-                <input type="file" class="form-control" name="imgfun" /><br>
+                <input type="file" class="form-control" name="imagem" /><br>
             </div>
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar

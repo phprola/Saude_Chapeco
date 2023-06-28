@@ -11,6 +11,7 @@
                 <option value="nome">Nome</option>
                 <option value="telefone">Telefone</option>
                 <option value="email">Email</option>
+                <option value="CRP">CRP</option>
             </select>
         </div>
         <div class="col-4">
@@ -22,8 +23,7 @@
             </button>
             <a class="btn btn-success" href="{{ action('App\Http\Controllers\FuncionarioController@create') }}"><i
                 class="fa-solid fa-plus"></i> Cadastrar</a>
-            <a class="btn btn-info" href="{{ action('App\Http\Controllers\PDFController@generateFuncionarioPDF') }}"><i
-                class="fa-solid fa-print"></i> Baixar PDF</a>
+
         </div>
     </div>
 </form>
@@ -34,22 +34,21 @@
             <th scope="col">Nome</th>
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
-            <th scope="col">Setor</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">CRP</th>
+            <th scope="col">Imagem</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($funcionarios as $item)
             @php
-                $nome_imagem = !empty($item->imgfun) ? $item->imgfun : 'sem_imagem.jpg';
+                $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
             @endphp
             <tr>
                 <td scope='row'>{{ $item->id }}</td>
                 <td>{{ $item->nome }}</td>
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
-                <td>{{ $item->setor->nome }}</td>
+                <td>{{ $item->crp }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
                 <td><a href="{{ action('App\Http\Controllers\FuncionarioController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
