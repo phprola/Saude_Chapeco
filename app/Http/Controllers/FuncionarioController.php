@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Funcionario;
-use App\Models\Setor;
 use Illuminate\Support\Facades\Storage;
 
 class FuncionarioController extends Controller
@@ -19,9 +18,7 @@ class FuncionarioController extends Controller
 
     function create()
     {
-        $setor = Setor::orderBy('nome')->get();
-
-        return view('FuncionarioForm')->with(['setor' => $setor]);
+        return view('FuncionarioForm');
     }
 
     function store(Request $request)
@@ -31,8 +28,8 @@ class FuncionarioController extends Controller
                 'nome' => 'required | max: 120',
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
-                'setor_id' => 'nullable',
-                'imgfun' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'crp' => 'required | max: 11',
+                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
@@ -40,17 +37,19 @@ class FuncionarioController extends Controller
                 'telefone.required' => 'O telefone é obrigatório',
                 'telefone.max' => 'Só é permitido 20 caracteres',
                 'email.max' => 'Só é permitido 100 caracteres',
+                'crp.required' => 'O crp é obrigatório',
+                'crp.max' => 'Só é permitido 11 caracteres',
             ]
         );
 
-        $imgfun = $request->file('imgfun');
+        $imagem = $request->file('imagem');
         $nome_arquivo = '';
-        if ($imgfun) {
+        if ($imagem) {
             $nome_arquivo =
-                date('YmdHis') . '.' . $imgfun->getClientOriginalExtension();
+                date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
 
             $diretorio = 'imagem/';
-            $imgfun->storeAs($diretorio, $nome_arquivo, 'public');
+            $imagem->storeAs($diretorio, $nome_arquivo, 'public');
             $nome_arquivo = $diretorio . $nome_arquivo;
         }
 
@@ -59,8 +58,9 @@ class FuncionarioController extends Controller
             'nome' => $request->nome,
             'telefone' => $request->telefone,
             'email' => $request->email,
-            'setor_id' => $request->setor_id,
-            'imgfun' => $nome_arquivo,
+            'imagem' => $nome_arquivo,
+            'crp' => $request->crp,
+
         ]);
 
         return \redirect()->action(
@@ -73,11 +73,9 @@ class FuncionarioController extends Controller
         //select * from usuario where id = $id;
         $funcionario = Funcionario::findOrFail($id);
         //dd($funcionario);
-        $setor = Setor::orderBy('nome')->get();
 
         return view('funcionarioForm')->with([
             'funcionario' => $funcionario,
-            'setor' => $setor,
         ]);
     }
 
@@ -86,11 +84,9 @@ class FuncionarioController extends Controller
         //select * from funcionario where id = $id;
         $funcionario = Funcionario::findOrFail($id);
         //dd($usuario);
-        $setor = Setor::orderBy('nome')->get();
 
         return view('FuncionarioForm')->with([
             'funcionario' => $funcionario,
-            'setor' => $setor,
         ]);
     }
 
@@ -102,8 +98,8 @@ class FuncionarioController extends Controller
                 'nome' => 'required | max: 120',
                 'telefone' => 'required | max: 20',
                 'email' => ' nullable | email | max: 100',
-                'setor_id' => 'nullable',
-                'imgfun' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'crp' => 'required | max: 11',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
@@ -111,6 +107,8 @@ class FuncionarioController extends Controller
                 'telefone.required' => 'O telefone é obrigatório',
                 'telefone.max' => 'Só é permitido 20 caracteres',
                 'email.max' => 'Só é permitido 100 caracteres',
+                'crp.required' => 'O crp é obrigatório',
+                'crp.max' => 'Só é permitido 11 caracteres',
             ]
         );
 
@@ -118,19 +116,19 @@ class FuncionarioController extends Controller
             'nome' => $request->nome,
             'telefone' => $request->telefone,
             'email' => $request->email,
-            'setor_id' => $request->setor_id,
+            'crp' => $request->crp,
         ];
 
-        $imgfun = $request->file('imgfun');
+        $imagem = $request->file('imagem');
         //verifica se o campo imagem foi passado uma imagem
-        if ($imgfun) {
-            $nome_arquivo = date('YmdHis') . '.' . $imgfun->getClientOriginalExtension();
+        if ($imagem) {
+            $nome_arquivo = date('YmdHis') . '.' . $imagem->getClientOriginalExtension();
 
             $diretorio = 'imagem/';
             //salva a imagem em uma pasta
-            $imgfun->storeAs($diretorio, $nome_arquivo, 'public');
+            $imagem->storeAs($diretorio, $nome_arquivo, 'public');
             //adiciona ao vetor o diretorio do arquivo e o nome
-            $dados['imgfun'] = $diretorio . $nome_arquivo;
+            $dados['imagem'] = $diretorio . $nome_arquivo;
         }
 
         //metodo para atualizar passando o vetor com os dados do form e o id
@@ -147,8 +145,8 @@ class FuncionarioController extends Controller
         $funcionario = Funcionario::findOrFail($id);
 
         // verifica se existe o arquivo vinculado ao registro e depois remove
-        if ($funcionario->imgfun){
-            Storage::disk('public')->delete($funcionario->imgfun);
+        if ($funcionario->imagem){
+            Storage::disk('public')->delete($funcionario->imagem);
         }
         $funcionario->delete();
         return \redirect('funcionario')->with('success', 'Removido com sucesso!');

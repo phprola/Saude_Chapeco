@@ -12,13 +12,10 @@ class Atendimento extends Model
     protected $table = "Atendimento";
 
     protected $fillable = [
-        'data', 'hora', 'funcionario_id', 'paciente_id'
+        'data', 'hora', 'funcionario_id', 'nome', 'email'
     ];
 
         public function funcionario(){
             return $this->belongsTo(Funcionario::class,'funcionario_id','id');
-        }
-        public function Paciente(){
-            return $this->belongsTo(Paciente::class,'paciente_id','id');
         }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('data');
             $table->string('hora',20);
-            $table->foreignId('paciente_id')->nullable()->constrained('paciente')->default(null);
+           /**  $table->foreignId('paciente_id')->nullable()->constrained('paciente')->default(null);*/
             $table->foreignId('funcionario_id')->nullable()->constrained('funcionario')->default(null);
             $table->timestamps();
         });

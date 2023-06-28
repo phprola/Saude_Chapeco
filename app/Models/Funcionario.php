@@ -11,10 +11,10 @@ class Funcionario extends Model
     protected $table = "funcionario";
 
     protected $fillable = [
-        'nome', 'telefone', 'email', 'setor_id', 'imgfun'
+        'nome', 'telefone', 'email', 'crp', 'imgfun'
     ];
 
     public function setor(){
-        return $this->belongsTo(Setor::class,'setor_id','id');
+        return $this->belongsTo(Setor::class,'id');
     }
 }

@@ -55,10 +55,6 @@ Route::get('/dashboard', function () {
         Route::post('atendimento/search', [AtendimentoController::class, 'search'])->name(
             'atendimento.search'
         );
-        Route::resource('paciente', PacienteController::class);
-        Route::post('paciente/search', [PacienteController::class, 'search'])->name(
-            'paciente.search'
-        );
     });
 
 require __DIR__ . '/auth.php';
