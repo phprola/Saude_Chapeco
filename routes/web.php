@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FarmaciaController;
 use App\Http\Controllers\AtendimentoController;
+use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,10 @@ Route::get('/dashboard', function () {
         Route::resource('atendimento', AtendimentoController::class);
         Route::post('atendimento/search', [AtendimentoController::class, 'search'])->name(
             'atendimento.search'
+        );
+        Route::resource('paciente', PacienteController::class);
+        Route::post('paciente/search', [PacienteController::class, 'search'])->name(
+            'paciente.search'
         );
     });
 

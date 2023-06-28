@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('estoque', function (Blueprint $table) {
+        Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',120);
-            $table->float('peso',10);
-            $table->float('custo', 8);
-            $table->integer('quantidade',false,true);
+            $table->string('nome', 40);
+            $table->string('telefone', 14);
+            $table->string('email', 50);
+            $table->string('UBS', 30);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estoque');
+        Schema::dropIfExists('pacientes');
     }
 };
