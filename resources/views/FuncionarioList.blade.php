@@ -36,13 +36,14 @@
             <th scope="col">Telefone</th>
             <th scope="col">Email</th>
             <th scope="col">CRP</th>
+            <th scope="col">CAPS</th>
             <th scope="col">Imagem</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($funcionarios as $item)
             @php
-                $nome_imagem = !empty($item->imagem) ? $item->imagem : 'sem_imagem.jpg';
+                $nome_imagem = !empty($item->imgfun) ? $item->imgfun : 'sem_imagem.jpg';
             @endphp
             <tr>
                 <td scope='row'>{{ $item->id }}</td>
@@ -50,6 +51,7 @@
                 <td>{{ $item->telefone }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->crp }}</td>
+                <td>{{ $item->caps }}</td>
                 <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" /> </td>
                 <td><a href="{{ action('App\Http\Controllers\FuncionarioController@edit', $item->id) }}"><i
                             class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>

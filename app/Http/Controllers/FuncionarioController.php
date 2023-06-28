@@ -30,7 +30,7 @@ class FuncionarioController extends Controller
                 'email' => ' nullable | email | max: 100',
                 'crp' => 'required | max: 11',
                 'caps' => 'required | max: 20',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'imgfun' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
@@ -105,7 +105,7 @@ class FuncionarioController extends Controller
                 'email' => ' nullable | email | max: 100',
                 'crp' => 'required | max: 11',
                 'caps' => 'required | max: 20',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'imgfun' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
             ],
             [
                 'nome.required' => 'O nome é obrigatório',
@@ -154,8 +154,8 @@ class FuncionarioController extends Controller
         $funcionario = Funcionario::findOrFail($id);
 
         // verifica se existe o arquivo vinculado ao registro e depois remove
-        if ($funcionario->imagem){
-            Storage::disk('public')->delete($funcionario->imagem);
+        if ($funcionario->imgfun){
+            Storage::disk('public')->delete($funcionario->imgfun);
         }
         $funcionario->delete();
         return \redirect('funcionario')->with('success', 'Removido com sucesso!');
