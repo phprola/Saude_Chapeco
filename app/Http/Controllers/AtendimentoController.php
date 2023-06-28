@@ -22,8 +22,9 @@ class AtendimentoController extends Controller
     function create()
     {
         $funcionario = Funcionario::orderBy('nome')->get();
+        $paciente = Paciente::orderBy('nome')->get();
         //dd($categorias);
-        return view('AtendimentoForm')->with(['funcionario' => $funcionario]);
+        return view('AtendimentoForm')->with(['funcionario' => $funcionario, 'paciente' => $paciente]);
     }
 
     function store(Request $request)
@@ -67,7 +68,7 @@ class AtendimentoController extends Controller
         return view('AtendimentoForm')->with([
             'atendimento' => $atendimento,
             'funcionario' => $funcionario,
-            'paciente_id' => $paciente,
+            'paciente' => $paciente,
         ]);
     }
 
@@ -118,7 +119,8 @@ class AtendimentoController extends Controller
         return \redirect('atendimento')->with('success', 'Atualizado com sucesso!');
     }
 
-    function destroy($id){
+    function destroy($id)
+    {
         $atendimento = Atendimento::findOrFail($id);
 
         // verifica se existe o arquivo vinculado ao registro e depois remove
@@ -128,12 +130,12 @@ class AtendimentoController extends Controller
 
     function search(Request $request)
     {
+        $data = implode('-', array_reverse(explode('/', $request->valor)));
         if ($request->campo == 'data' && !empty($request->valor)) {
             $atendimento = Atendimento::where(
-                //dd(date('Y-m-d',strtotime(date('d/m/Y',strtotime($request->valor))))),
                 $request->campo,
                 'like',
-                '%' . date('Y-m-d',strtotime(date('d/m/Y',strtotime($request->valor)))) . '%'
+                '%' . $data . '%'
             )->get();
         } elseif ($request->campo) {
             $atendimento = Atendimento::where(
@@ -146,7 +148,16 @@ class AtendimentoController extends Controller
             $atendimento = Atendimento::all();
         }
 
-        //dd($atendimento);
+        //dd($atendimentos);
         return view('AtendimentoList')->with(['atendimento' => $atendimento]);
     }
 }
+
+/*
+15/12/2018 -> 2018-12-15
+
+$data = implode('-', array_reverse(explode('/', "15/12/2018")));
+2018-12-15 -> 15/12/2018
+
+$data = implode('/', array_reverse(explode('-', "2018-12-15")));
+*/

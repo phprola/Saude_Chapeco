@@ -15,10 +15,13 @@ class Atendimento extends Model
         'data', 'hora', 'funcionario_id', 'nome', 'email', 'paciente_id',
     ];
 
-        public function funcionario(){
-            return $this->belongsTo(Funcionario::class,'funcionario_id','id');
-        }
-        public function paciente(){
-            return $this->belongsTo(Paciente::class,'paciente_id','id');
-        }
+    public function funcionario(){
+        return $this->belongsTo(Funcionario::class,'funcionario_id','id');
+    }
+    public function paciente(){
+        return $this->belongsTo(Paciente::class,'paciente_id','id');
+    }
+    public function getDataAttribute($value){
+        return \Carbon\Carbon::parse($value)->format('d/m/Y');
+    }
 }

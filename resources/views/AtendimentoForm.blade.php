@@ -34,16 +34,6 @@
                     value=@if (!empty(old('hora'))) {{ old('hora') }} @elseif(!empty($atendimento->hora)) {{ $atendimento->hora }} @else {{ '' }} @endif /><br>
             </div>
             <div class="col-3">
-                <label class="form-label">Nome do Paciente</label><br>
-                <input type="text" class="form-control" name="paciente_nome"
-                    value=@if (!empty(old('paciente_nome'))) {{ old('paciente_nome') }} @elseif(!empty($atendimento->paciente_nome)) {{ $atendimento->hora }} @else {{ '' }} @endif /><br>
-            </div>
-            <div class="col-3">
-                <label class="form-label">Email do Paciente</label><br>
-                <input type="text" class="form-control" name="paciente_email"
-                    value=@if (!empty(old('paciente_email'))) {{ old('paciente_email') }} @elseif(!empty($atendimento->paciente_email)) {{ $atendimento->hora }} @else {{ '' }} @endif /><br>
-            </div>
-            <div class="col-3">
                 <label class="form-label">ID do Funcionário</label><br>
                 <select name="funcionario_id" class="form-select">
                     @foreach ($funcionario as $item)
