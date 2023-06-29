@@ -34,7 +34,7 @@
                     value=@if (!empty(old('hora'))) {{ old('hora') }} @elseif(!empty($atendimento->hora)) {{ $atendimento->hora }} @else {{ '' }} @endif /><br>
             </div>
             <div class="col-3">
-                <label class="form-label">ID do Funcionário</label><br>
+                <label class="form-label">Nome do Funcionário</label><br>
                 <select name="funcionario_id" class="form-select">
                     @foreach ($funcionario as $item)
                         <option value="{{ $item->id }}">{{ $item->nome }}</option>
@@ -42,7 +42,7 @@
                 </select>
             </div>
             <div class="col-3">
-                <label class="form-label">ID do Paciente</label><br>
+                <label class="form-label">Nome do Paciente</label><br>
                 <select name="paciente_id" class="form-select">
                     @foreach ($paciente as $item)
                         <option value="{{ $item->id }}">{{ $item->nome }}</option>
